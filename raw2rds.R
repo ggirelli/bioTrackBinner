@@ -1,17 +1,37 @@
-# Process raw data into RDS tracks
+#!/usr/bin/env Rscript
 
-require(rtracklayer)
+require(argparser)
+parser = arg_parser(paste0(
+		'Bins biological data tracks and generates corresponding RDS files. ',
+		'The reference table should be a tab-separated no-header table with ',
+		'one line per track and the following columns: ',
+		'cellLine, markerType, accessionID, replicateID, pathToTrack. ',
+		'The bins table should be a tab-separated no-header table with one ',
+		'line per bin file and the following columns: label, pathToBins. ',
+		'Bin files are expected to be in bed format.'
+	), name = 'raw2rds.R')
+parser = add_argument(parser, arg = 'referenceTable',
+	help = 'Path to reference table.')
+parser = add_argument(parser, arg = 'binsTable',
+	help = 'Path to bins table.')
+parser = add_argument(parser, arg = 'outputFolder',
+	help = 'Path to output folder, created if missing.')
+parser = add_argument(parser, arg = '--elective', short = '-e', type = class(0),
+	help = 'Elective argument.', default = 1, nargs = 1)
+p = parse_args(parser)
+attach(p['' != names(p)])
+
+chromosomes = paste0("chr", c(1:22, "X", "Y"))
+
 require(data.table)
-require(BSgenome.Hsapiens.UCSC.hg19)
 require(pbapply)
 require(readxl)
+require(rtracklayer)
+
+require(BSgenome.Hsapiens.UCSC.hg19)
 
 source("/media/MiSo/GPSeq/analysis/GG/src/functions.common.R")
 source("bioRDSmaker.functions.R")
-
-rdsTracksOutdir = "rds_tracks"
-
-chromosomes = paste0("chr", c(1:22, "X", "Y"))
 
 # hg19 bins
 bins = list(
@@ -26,7 +46,7 @@ for( i in seq_along(bins) ){
 	seqinfo(bins[[i]]) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)
 }
 
-ref = fread(cmd='grep -v "^#" referenceTable.tsv',
+ref = fread(cmd = sprintf('grep -v "^#" %s', referenceTable),
 	header = FALSE,
 	col.names = c("cell_line", "marker", "accession", "rep", "path"),
 	key = "accession")
@@ -42,7 +62,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		x = bw.files[i]
 		cat(sprintf("Processing '%s'\n", x))
 		ext = getFullExt(x)
-		fileList = file.path(rdsTracksOutdir,
+		fileList = file.path(outputFolder,
 			paste0(names(bw.files)[i], ".epig.", names(bins), ".rds"))
 		if ( any(!file.exists(fileList)) ) {
 			processed = F
@@ -95,6 +115,8 @@ setcolorder(epig, c("chrom", "start", "end", "score",
 	"cell_line", "marker", "type", "rep", "accession"))
 epig[, `:=`(start = as.numeric(start), end = as.numeric(end))]
 
+epig = getTranslocationCoordinates_binned(epig)
+
 dt = split(epig, epig[, bins])
 for ( i in seq_along(bins) ) {
 	dt[[i]][, bins := NULL]
@@ -106,7 +128,7 @@ for ( i in seq_along(bins) ) {
 	for ( j in seq_along(at) ) {
 		fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[i])
 		if ( !file.exists(fName) )
-			saveRDS(at[[j]], file = file.path(rdsTracksOutdir, fName))
+			saveRDS(at[[j]], file = file.path(outputFolder, fName))
 	}
 
 	saveRDS(dt[[i]], file = sprintf("epig.%s.rds", names(bins)[i]))
