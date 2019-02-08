@@ -1,3 +1,4 @@
 raw_data/*
 bins/*
 rds_tracks/*
+*.rds
