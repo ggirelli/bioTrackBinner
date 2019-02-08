@@ -15,9 +15,8 @@ parser = add_argument(parser, arg = 'referenceTable',
 parser = add_argument(parser, arg = 'binsTable',
 	help = 'Path to bins table.')
 parser = add_argument(parser, arg = 'outputFolder',
-	help = 'Path to output folder, created if missing.')
-parser = add_argument(parser, arg = '--elective', short = '-e', type = class(0),
-	help = 'Elective argument.', default = 1, nargs = 1)
+	help = paste0('Path to output folder for intermediate single-track RDS',
+		', created if missing.'))
 p = parse_args(parser)
 attach(p['' != names(p)])
 
@@ -27,19 +26,17 @@ require(data.table)
 require(pbapply)
 require(readxl)
 require(rtracklayer)
-
 require(BSgenome.Hsapiens.UCSC.hg19)
-
-source("/media/MiSo/GPSeq/analysis/GG/src/functions.common.R")
+source("coordCorrect.functions.R")
 source("bioRDSmaker.functions.R")
 
-# hg19 bins
-bins = list(
-	bin.100kbSize.100kbStep  = import.bed(file.path("bins",
-		"hg19.bins.100kbSize.100kbStep.bed")),
-	bin.1MbSize.100kbStep = import.bed(file.path("bins",
-		"hg19.bins.1MbSize.100kbStep.bed"))
-)
+cat("Reading bins...\n")
+binRef = fread(cmd = sprintf('grep -v "^#" %s', binsTable), header = F,
+	col.names = c("label", "path"))
+bins = lapply(1:nrow(binRef), FUN = function(binID) {
+	return(import.bed(binRef[binID, path]))
+})
+names(bins) = binRef$label
 for( i in seq_along(bins) ){
 	bins[[i]] = keepSeqlevels(bins[[i]], chromosomes,
 		pruning.mode = "coarse")
@@ -65,37 +62,48 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		fileList = file.path(outputFolder,
 			paste0(names(bw.files)[i], ".epig.", names(bins), ".rds"))
 		if ( any(!file.exists(fileList)) ) {
-			processed = F
-			if ( ext %in% c("bed", "bed.gz") ) {
+			out = NULL
+			if ( ext %in% c("bed", "bed.gz") )
 				out = processBed(x, bins, chromosomes)
-				processed = T
-			}
-			if ( "bdg" == ext ) {
+			if ( "bdg" == ext )
 				out = processBedGraph(x, bins, chromosomes)
-				processed = T
-			}
-			if ( "bigWig" == ext ) {
+			if ( "bigWig" == ext )
 				out = processBigWig(x, bins, chromosomes)
-				processed = T
-			}
-			if ( "cod.gz" == ext ) {
+			if ( "cod.gz" == ext )
 				out = processCod(x, bins, chromosomes, T)
-				processed = T
-			}
-			if ( "cod" == ext ) {
+			if ( "cod" == ext )
 				out = processCod(x, bins, chromosomes)
-				processed = T
-			}
-			if ( "txt" == ext ) {
+			if ( "txt" == ext )
 				out = processText(x, bins, chromosomes)
-				processed = T
-			}
-			if ( "xlsx" == ext ) {
+			if ( "xlsx" == ext )
 				out = processXlsx(x, bins, chromosomes)
-				processed = T
-			}
-			if ( processed ) {
+			if ( !is.null(out) ) {
 				out$accession = names(bw.files)[i]
+
+				setkeyv(out, "accession")
+				out = out[ref[, list(accession, cell_line, marker, rep)], nomatch = 0]
+				setnames(out, "seqnames", "chrom")
+				setcolorder(out, c("chrom", "start", "end", "score",
+					"cell_line", "marker", "type", "rep", "accession"))
+				out[, `:=`(start = as.numeric(start), end = as.numeric(end))]
+
+				out = getTranslocationCoordinates_binned(out)
+
+				dt = split(out, out[, bins])
+				for ( i in seq_along(bins) ) {
+					dt[[i]][, bins := NULL]
+
+					dt[[i]][(dt[[i]][, end - start]) != (width(bins[[i]])[1]-1),
+						end := end + (width(bins[[i]])[1]-1 - (end - start))]
+
+					at = split(dt[[i]], unique(dt[[i]][, accession]))
+					for ( j in seq_along(at) ) {
+						fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[i])
+						if ( !file.exists(fName) )
+							saveRDS(at[[j]], file = file.path(outputFolder, fName))
+					}
+				}
+
 				return(out)
 			} else {
 				cat("Skipped dataset entirely...\n")
@@ -108,28 +116,6 @@ epig = rbindlist(lapply(seq_along(bw.files),
 	}, bins
 ))
 
-setkeyv(epig, "accession")
-epig = epig[ref[, list(accession, cell_line, marker, rep)], nomatch = 0]
-setnames(epig, "seqnames", "chrom")
-setcolorder(epig, c("chrom", "start", "end", "score",
-	"cell_line", "marker", "type", "rep", "accession"))
-epig[, `:=`(start = as.numeric(start), end = as.numeric(end))]
-
-epig = getTranslocationCoordinates_binned(epig)
-
 dt = split(epig, epig[, bins])
-for ( i in seq_along(bins) ) {
-	dt[[i]][, bins := NULL]
-
-	cond = (dt[[i]][, end - start]) != (width(bins[[i]])[1]-1)
-	dt[[i]][cond, end := end + (width(bins[[i]])[1]-1 - (end - start))]
-
-	at = split(dt[[i]], unique(dt[[i]][, accession]))
-	for ( j in seq_along(at) ) {
-		fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[i])
-		if ( !file.exists(fName) )
-			saveRDS(at[[j]], file = file.path(outputFolder, fName))
-	}
-
+for ( i in seq_along(bins) )
 	saveRDS(dt[[i]], file = sprintf("epig.%s.rds", names(bins)[i]))
-}
