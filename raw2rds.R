@@ -43,6 +43,7 @@ for( i in seq_along(bins) ){
 	seqinfo(bins[[i]]) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)
 }
 
+cat("Reading references...\n")
 ref = fread(cmd = sprintf('grep -v "^#" %s', referenceTable),
 	header = FALSE,
 	col.names = c("cell_line", "marker", "accession", "rep", "path"),
@@ -87,18 +88,18 @@ epig = rbindlist(lapply(seq_along(bw.files),
 					"cell_line", "marker", "type", "rep", "accession"))
 				out[, `:=`(start = as.numeric(start), end = as.numeric(end))]
 
-				out = getTranslocationCoordinates_binned(out)
-
 				dt = split(out, out[, bins])
-				for ( i in seq_along(bins) ) {
-					dt[[i]][, bins := NULL]
+				for ( k in seq_along(bins) ) {
+					dt[[k]][, bins := NULL]
 
-					dt[[i]][(dt[[i]][, end - start]) != (width(bins[[i]])[1]-1),
-						end := end + (width(bins[[i]])[1]-1 - (end - start))]
+					dt[[k]][(dt[[k]][, end - start]) != (width(bins[[k]])[1]-1),
+						end := end + (width(bins[[k]])[1]-1 - (end - start))]
 
-					at = split(dt[[i]], unique(dt[[i]][, accession]))
+					dt[[k]] = getTranslocationCoordinates_binned(dt[[k]])
+
+					at = split(dt[[k]], unique(dt[[k]][, accession]))
 					for ( j in seq_along(at) ) {
-						fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[i])
+						fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[k])
 						if ( !file.exists(fName) )
 							saveRDS(at[[j]], file = file.path(outputFolder, fName))
 					}
@@ -110,8 +111,13 @@ epig = rbindlist(lapply(seq_along(bw.files),
 			}
 		} else {
 			cat("Already processed, reading...\n")
-			for ( fileName in fileList )
-				return(readRDS(fileName))
+			out = list()
+			for ( binLabel in names(bins) ) {
+				out[[binLabel]] = readRDS(file.path(outputFolder,
+					paste0(names(bw.files)[i], ".epig.", binLabel, ".rds")))
+				out[[binLabel]]$bins = binLabel
+			}
+			return(rbindlist(out))
 		}
 	}, bins
 ))

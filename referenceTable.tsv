@@ -1,3 +1,6 @@
+HeLa	H3K9me3	GSE63116	1	/media/MiSo/bioRDSmaker/raw_data/GSE63116_HeLa_H3K9me3_windowScores.txt
+HeLa	H3K9me3	GSE86811	1	/media/MiSo/bioRDSmaker/raw_data/GSE86811_H3K9me3_scores.txt
+HeLa	H3K9me3	GSE95456	1	/media/MiSo/bioRDSmaker/raw_data/GSE95456_H3K9me3_scores.xlsx
 HAP1	DNAse-seq	ENCFF485YQE	1	/media/MiSo/bioRDSmaker/raw_data/ENCFF485YQE.bigWig
 HAP1	DNAse-seq	ENCFF095QLZ	2	/media/MiSo/bioRDSmaker/raw_data/ENCFF095QLZ.bigWig
 K562	DNAse-seq	ENCFF789QUY	1	/media/MiSo/bioRDSmaker/raw_data/ENCFF789QUY.bigWig
@@ -25,9 +28,6 @@ HAP1	H3K4me3	GSM2871902	1	/media/MiSo/bioRDSmaker/raw_data/GSM2871902_H3K4Par1_d
 HAP1	H3K4me3	GSM2871903	2	/media/MiSo/bioRDSmaker/raw_data/GSM2871903_H3K4Par2_dedup.unique_peak.cod.gz
 HAP1	PolII	GSM2871910	1	/media/MiSo/bioRDSmaker/raw_data/GSM2871910_POL2Par1_dedup.unique_peak.cod.gz
 HAP1	PolII	GSM2871911	2	/media/MiSo/bioRDSmaker/raw_data/GSM2871911_POL2Par2_dedup.unique_peak.cod.gz
-HeLa	H3K9me3	GSE63116	1	/media/MiSo/bioRDSmaker/raw_data/GSE63116_HeLa_H3K9me3_windowScores.txt
-HeLa	H3K9me3	GSE86811	1	/media/MiSo/bioRDSmaker/raw_data/GSE86811_H3K9me3_scores.txt
-HeLa	H3K9me3	GSE95456	1	/media/MiSo/bioRDSmaker/raw_data/GSE95456_H3K9me3_scores.xlsx
 HMEC	Methyl-450	Methyl450HmecRep1	1	/media/MiSo/bioRDSmaker/raw_data/wgEncodeHaibMethyl450HmecSitesRep1.bed.gz
 HMEC	Methyl-RRBS	MethylRrbsHmecRep1	1	/media/MiSo/bioRDSmaker/raw_data/wgEncodeHaibMethylRrbsHmecUwSitesRep1.bed.gz
 HMEC	Methyl-RRBS	MethylRrbsHmecRep2	2	/media/MiSo/bioRDSmaker/raw_data/wgEncodeHaibMethylRrbsHmecUwSitesRep2.bed.gz
