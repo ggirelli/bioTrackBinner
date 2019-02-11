@@ -122,6 +122,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 	}, bins
 ))
 
+cat("Merging tracks...\n")
 dt = split(epig, epig[, bins])
 for ( i in seq_along(bins) )
 	saveRDS(dt[[i]], file = sprintf("epig.%s.rds", names(bins)[i]))
