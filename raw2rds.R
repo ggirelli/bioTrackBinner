@@ -46,7 +46,7 @@ for( i in seq_along(bins) ){
 cat("Reading references...\n")
 ref = fread(cmd = sprintf('grep -v "^#" %s', referenceTable),
 	header = FALSE,
-	col.names = c("cell_line", "marker", "accession", "rep", "path"),
+	col.names = c("cell_line", "marker", "accession", "rep", "path", "src"),
 	key = "accession")
 
 bw.files = with(ref, setNames(path, accession))
@@ -58,28 +58,35 @@ stopifnot( all(allFilesExist) )
 epig = rbindlist(lapply(seq_along(bw.files),
 	function(i, bins) {
 		x = bw.files[i]
+		accession = names(bw.files)[i]
 		cat(sprintf("Processing '%s'\n", x))
 		ext = getFullExt(x)
 		fileList = file.path(outputFolder,
-			paste0(names(bw.files)[i], ".epig.", names(bins), ".rds"))
+			paste0(accession, ".epig.", names(bins), ".rds"))
 		if ( any(!file.exists(fileList)) ) {
 			out = NULL
-			if ( ext %in% c("bed", "bed.gz") )
-				out = processBed(x, bins, chromosomes)
-			if ( "bdg" == ext )
-				out = processBedGraph(x, bins, chromosomes)
-			if ( "bigWig" == ext )
-				out = processBigWig(x, bins, chromosomes)
-			if ( "cod.gz" == ext )
-				out = processCod(x, bins, chromosomes, T)
-			if ( "cod" == ext )
-				out = processCod(x, bins, chromosomes)
-			if ( "txt" == ext )
-				out = processText(x, bins, chromosomes)
-			if ( "xlsx" == ext )
-				out = processXlsx(x, bins, chromosomes)
+			if ( !is.na(ref[accession, src]) ) {
+				if ( file.exists(ref[accession, src]) )
+					source(ref[accession, src], local = T)
+			} else {
+				if ( ext %in% c("bed", "bed.gz") )
+					out = processBed(x, bins, chromosomes)
+				if ( "bdg" == ext )
+					out = processBedGraph(x, bins, chromosomes)
+				if ( "bigWig" == ext | "bw" == ext)
+					out = processBigWig(x, bins, chromosomes)
+				if ( "cod.gz" == ext )
+					out = processCod(x, bins, chromosomes, T)
+				if ( "cod" == ext )
+					out = processCod(x, bins, chromosomes)
+				if ( "txt" == ext )
+					out = processText(x, bins, chromosomes)
+				if ( "xlsx" == ext )
+					out = processXlsx(x, bins, chromosomes)
+				# If it reaches here, no format recognized
+			}
 			if ( !is.null(out) ) {
-				out$accession = names(bw.files)[i]
+				out$accession = accession
 
 				setkeyv(out, "accession")
 				out = out[ref[, list(accession, cell_line, marker, rep)], nomatch = 0]
