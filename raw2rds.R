@@ -63,6 +63,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		ext = getFullExt(x)
 		fileList = file.path(outputFolder,
 			paste0(accession, ".epig.", names(bins), ".rds"))
+		
 		if ( any(!file.exists(fileList)) ) {
 			out = NULL
 			if ( !is.na(ref[accession, src]) ) {
@@ -97,8 +98,9 @@ epig = rbindlist(lapply(seq_along(bw.files),
 
 				dt = split(out, out[, bins])
 				for ( k in seq_along(bins) ) {
-					dt[[k]][(dt[[k]][, end - start]) != (width(bins[[k]])[1]-1),
-						end := end + (width(bins[[k]])[1]-1 - (end - start))]
+					properBinSize = width(bins[[dt[[k]][1, bins]]])[1]-1
+					dt[[k]][(dt[[k]][, end - start]) != properBinSize,
+						end := end + properBinSize - (end - start)]
 
 					dt[[k]] = getTranslocationCoordinates_binned(dt[[k]])
 
@@ -117,6 +119,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		} else {
 			cat(" Already processed, reading...\n")
 		}
+
 		out = list()
 		for ( binLabel in names(bins) ) {
 			out[[binLabel]] = readRDS(file.path(outputFolder,

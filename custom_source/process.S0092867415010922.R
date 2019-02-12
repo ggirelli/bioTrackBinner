@@ -1,8 +1,9 @@
-# Pre-loaded:
-# require(data.table)
-# require(rtracklayer)
-# source("/media/MiSo/bioTrackBinner/bioRDSmaker.functions.R")
-# x = "/media/MiSo/bioTrackBinner/raw_data/DataS1_Clone.14.1N.OE.txt"
+if ( !exists('x') ) { # Pre-loaded
+	library(data.table)
+	library(rtracklayer)
+	source("/media/MiSo/bioTrackBinner/bioRDSmaker.functions.R")
+	x = "/media/MiSo/bioTrackBinner/raw_data/DataS1_Clone.14.1N.OE.txt"
+}
 
 chromosomes = paste0("chr", c(1:7, 10:21, "9:22", "22:9", "X"))
 
@@ -18,6 +19,7 @@ seqlengths(gref) = grefDT[seqlevels(gref), end]
 gref = keepSeqlevels(gref, chromosomes, pruning.mode = "coarse")
 gref = sortSeqlevels(gref)
 
+# Bins must be in the same order as in the binsTable!
 bins = list(
 	bins.1MbSize.100kbStep = import.bed(file.path(
 		"/media/MiSo/bioTrackBinner/bins/",
@@ -53,6 +55,5 @@ tmp2 = coverage(tmp2, weight = tmp2$score)
 
 out = rbindlist(lapply(bins, process_single_bin,
 	ftype = "custom", tmp = tmp2), idcol = "bins")
-
 
 # out is returned to the main script
