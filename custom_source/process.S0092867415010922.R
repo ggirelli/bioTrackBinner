@@ -1,6 +1,8 @@
 # Pre-loaded:
 # require(data.table)
 # require(rtracklayer)
+# source("/media/MiSo/bioTrackBinner/bioRDSmaker.functions.R")
+# x = "/media/MiSo/bioTrackBinner/raw_data/DataS1_Clone.14.1N.OE.txt"
 
 chromosomes = paste0("chr", c(1:7, 10:21, "9:22", "22:9", "X"))
 

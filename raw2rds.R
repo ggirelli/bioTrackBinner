@@ -104,25 +104,26 @@ epig = rbindlist(lapply(seq_along(bw.files),
 
 					at = split(dt[[k]], unique(dt[[k]][, accession]))
 					for ( j in seq_along(at) ) {
+						at[[j]][, bins := NULL]
 						fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[k])
 						if ( !file.exists(fName) )
 							saveRDS(at[[j]], file = file.path(outputFolder, fName))
 					}
 				}
-				return(rbindlist(dt))
 			} else {
 				cat(" Skipped dataset entirely...\n")
+				return(NULL)
 			}
 		} else {
 			cat(" Already processed, reading...\n")
-			out = list()
-			for ( binLabel in names(bins) ) {
-				out[[binLabel]] = readRDS(file.path(outputFolder,
-					paste0(names(bw.files)[i], ".epig.", binLabel, ".rds")))
-				out[[binLabel]]$bins = binLabel
-			}
-			return(rbindlist(out))
 		}
+		out = list()
+		for ( binLabel in names(bins) ) {
+			out[[binLabel]] = readRDS(file.path(outputFolder,
+				paste0(names(bw.files)[i], ".epig.", binLabel, ".rds")))
+			out[[binLabel]]$bins = binLabel
+		}
+		return(rbindlist(out))
 	}, bins
 ))
 
