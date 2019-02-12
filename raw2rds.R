@@ -106,8 +106,9 @@ epig = rbindlist(lapply(seq_along(bw.files),
 
 					at = split(dt[[k]], unique(dt[[k]][, accession]))
 					for ( j in seq_along(at) ) {
+						binlabel = at[[j]][1, bins]
 						at[[j]][, bins := NULL]
-						fName = sprintf("%s.epig.%s.rds", names(at)[j], names(bins)[k])
+						fName = sprintf("%s.epig.%s.rds", names(at)[j], binlabel)
 						if ( !file.exists(fName) )
 							saveRDS(at[[j]], file = file.path(outputFolder, fName))
 					}
@@ -133,4 +134,4 @@ epig = rbindlist(lapply(seq_along(bw.files),
 cat("Merging tracks...\n")
 dt = split(epig, epig[, bins])
 for ( i in seq_along(bins) )
-	saveRDS(dt[[i]], file = sprintf("epig.%s.rds", names(bins)[i]))
+	saveRDS(dt[[i]], file = sprintf("epig.%s.rds", dt[[i]][1, bins]))
