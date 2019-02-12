@@ -97,8 +97,6 @@ epig = rbindlist(lapply(seq_along(bw.files),
 
 				dt = split(out, out[, bins])
 				for ( k in seq_along(bins) ) {
-					dt[[k]][, bins := NULL]
-
 					dt[[k]][(dt[[k]][, end - start]) != (width(bins[[k]])[1]-1),
 						end := end + (width(bins[[k]])[1]-1 - (end - start))]
 
@@ -111,13 +109,12 @@ epig = rbindlist(lapply(seq_along(bw.files),
 							saveRDS(at[[j]], file = file.path(outputFolder, fName))
 					}
 				}
-
-				return(out)
+				return(rbindlist(dt))
 			} else {
-				cat("Skipped dataset entirely...\n")
+				cat(" Skipped dataset entirely...\n")
 			}
 		} else {
-			cat("Already processed, reading...\n")
+			cat(" Already processed, reading...\n")
 			out = list()
 			for ( binLabel in names(bins) ) {
 				out[[binLabel]] = readRDS(file.path(outputFolder,
