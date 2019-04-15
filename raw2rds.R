@@ -74,7 +74,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 					out = processBed(x, bins, chromosomes)
 				if ( "bdg" == ext )
 					out = processBedGraph(x, bins, chromosomes)
-				if ( "bigWig" == ext | "bw" == ext)
+				if ( "bigWig" == ext | "bw" == ext )
 					out = processBigWig(x, bins, chromosomes)
 				if ( "cod.gz" == ext )
 					out = processCod(x, bins, chromosomes, T)
