@@ -43,3 +43,6 @@ HAP1	ATAC-seq	SRR6766911	3	/media/MiSo/bioTrackBinner/raw_data/ATACseq_Chromatin
 K562	ATAC-seq	SRR8137174	1	/media/MiSo/bioTrackBinner/raw_data/ATACseq_Chromatin_Control_K562_1_treat_pileup.bdg	
 K562	ATAC-seq	SRR8137175	2	/media/MiSo/bioTrackBinner/raw_data/ATACseq_Chromatin_Control_K562_2_treat_pileup.bdg	
 KBM7	DamID	S0092867415010922	1	/media/MiSo/bioTrackBinner/raw_data/DataS1_Clone.14.1N.OE.txt	/media/MiSo/bioTrackBinner/custom_source/process.S0092867415010922.R
+HAP1	DamID-norm	ts190410-n12	1,2	/media/MiSo/bioTrackBinner/raw_data/Hap1_LMNB1-5kb-combined.bw	
+HAP1	DamID	ts190410-c1	1	/media/MiSo/bioTrackBinner/raw_data/Hap1_r1_LMNB1-5kb.bw	
+HAP1	DamID	ts190410-c2	2	/media/MiSo/bioTrackBinner/raw_data/Hap1_r2_LMNB1-5kb.bw	
