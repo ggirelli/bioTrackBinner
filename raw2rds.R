@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-require(argparser)
+suppressMessages(require(argparser))
 parser = arg_parser(paste0(
 		'Bins biological data tracks and generates corresponding RDS files. ',
 		'The reference table should be a tab-separated no-header table with ',
@@ -22,11 +22,11 @@ attach(p['' != names(p)])
 
 chromosomes = paste0("chr", c(1:22, "X", "Y"))
 
-require(data.table)
-require(pbapply)
-require(readxl)
-require(rtracklayer)
-require(BSgenome.Hsapiens.UCSC.hg19)
+suppressMessages(require(data.table))
+suppressMessages(require(pbapply))
+suppressMessages(require(readxl))
+suppressMessages(require(rtracklayer))
+suppressMessages(require(BSgenome.Hsapiens.UCSC.hg19))
 source("coordCorrect.functions.R")
 source("bioRDSmaker.functions.R")
 
@@ -66,7 +66,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		
 		if ( any(!file.exists(fileList)) ) {
 			out = NULL
-			if ( !is.na(ref[accession, src]) ) {
+			if ( 0 != nchar(ref[accession, src]) ) {
 				if ( file.exists(ref[accession, src]) )
 					source(ref[accession, src], local = T)
 			} else {

@@ -51,6 +51,7 @@ options(warn = -1)
 seqinfo(tmp2) = seqinfo(gref)
 options(warn = oldw)
 tmp2 = trim(tmp2)
+tmp2$score = log2(tmp2$score)
 tmp2 = coverage(tmp2, weight = tmp2$score)
 
 out = rbindlist(lapply(bins, process_single_bin,
