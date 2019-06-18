@@ -7,9 +7,9 @@ HAP1	PolII	GSM2871911	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/GSM2871911_POL2
 HAP1	ATAC-seq	SRR6766909	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_1_treat_pileup.bdg	
 HAP1	ATAC-seq	SRR6766910	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_2_treat_pileup.bdg	
 HAP1	ATAC-seq	SRR6766911	3	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_3_treat_pileup.bdg	
-HAP1	DamID-norm	ts190410-n12	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_LMNB1-5kb-combined.bw	
-HAP1	DamID	ts190410-c1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r1_LMNB1-5kb.bw	
-HAP1	DamID	ts190410-c2	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r2_LMNB1-5kb.bw	
+HAP1	DamID-LaminB-log2OE	ts190410-n12	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_LMNB1-5kb-combined.bw	
+HAP1	DamID-LaminB	ts190410-c1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r1_LMNB1-5kb.bw	
+HAP1	DamID-LaminB	ts190410-c2	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r2_LMNB1-5kb.bw	
 HAP1	DNAse-seq	ENCFF485YQE	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF485YQE.bigWig	
 HAP1	DNAse-seq	ENCFF095QLZ	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF095QLZ.bigWig	
 HeLa	H3K9me3	GSE63116	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE63116_HeLa_H3K9me3_windowScores.txt	
@@ -52,4 +52,4 @@ K562	Methyl-RRBS	MethylRrbsK562Rep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/w
 K562	Methyl-RRBS	MethylRrbsK562Rep2	2	/media/MiSo/bioTrackBinner/raw_data/K562/wgEncodeHaibMethylRrbsK562HaibSitesRep2.bed.gz	
 K562	ATAC-seq	SRR8137174	1	/media/MiSo/bioTrackBinner/raw_data/K562/ATACseq_Chromatin_Control_K562_1_treat_pileup.bdg	
 K562	ATAC-seq	SRR8137175	2	/media/MiSo/bioTrackBinner/raw_data/K562/ATACseq_Chromatin_Control_K562_2_treat_pileup.bdg	
-KBM7	DamID	S0092867415010922	1	/media/MiSo/bioTrackBinner/raw_data/KBM7/DataS1_Clone.14.1N.OE.txt	/media/MiSo/bioTrackBinner/custom_source/process.S0092867415010922.R
+KBM7	DamID-LaminB-log2OE	S0092867415010922	1	/media/MiSo/bioTrackBinner/raw_data/KBM7/DataS1_Clone.14.1N.OE.txt	/media/MiSo/bioTrackBinner/custom_source/process.S0092867415010922.R
