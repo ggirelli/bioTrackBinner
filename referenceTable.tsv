@@ -39,6 +39,9 @@ IMR90	H3K9me3	ENCFF272ZUB	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF272
 IMR90	H3K9me1	ENCFF437KYU	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF437KYU.bigWig	
 IMR90	H3K9ac	ENCFF792ZIY	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF792ZIY.bigWig	
 IMR90	H3K27me3	ENCFF062LIE	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF062LIE.bigWig	
+IMR90	H3K4me3	SRR4413993	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/H3K4me3_signal_over_control_ratio.bigWig	
+IMR90	H3K27ac	SRR4413992	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/H3K27ac_signal_over_control_ratio.bigWig	
+IMR90	CTCF	ENCFF603PYX	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF603PYX.bigWig	
 IMR90	Methyl-RRBS	ENCFF001TOH	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF001TOH.bed.gz	
 IMR90	Methyl-RRBS	ENCFF001TOI	2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF001TOI.bed.gz	
 K562	DNAse-seq	ENCFF789QUY	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF789QUY.bigWig	
