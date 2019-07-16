@@ -1,3 +1,4 @@
+HAP1	CTCF	SRR5266526	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_signal_over_control_ratio.bigWig	
 HAP1	H3K27ac	GSM2871898	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/GSM2871898_H3K27Par1_dedup.unique_peak.cod.gz	
 HAP1	H3K27ac	GSM2871899	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/GSM2871899_H3K27Par2_dedup.unique_peak.cod.gz	
 HAP1	H3K4me3	GSM2871902	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/GSM2871902_H3K4Par1_dedup.unique_peak.cod.gz	
