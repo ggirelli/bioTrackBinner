@@ -1,5 +1,8 @@
 #!/usr/bin/env Rscript
 
+suppressMessages(require(pbapply))
+pboptions(type = "timer")
+
 suppressMessages(require(argparser))
 parser = arg_parser(paste0(
 		'Bins biological data tracks and generates corresponding RDS files. ',
@@ -17,6 +20,8 @@ parser = add_argument(parser, arg = 'binsTable',
 parser = add_argument(parser, arg = 'outputFolder',
 	help = paste0('Path to output folder for intermediate single-track RDS',
 		', created if missing.'))
+parser = add_argument(parser, arg = '--threads', short = '-t', type = class(0),
+	help = 'Number of threads for parallelization.', default = 1, nargs = 1)
 p = parse_args(parser)
 attach(p['' != names(p)])
 
@@ -45,20 +50,19 @@ for( i in seq_along(bins) ){
 
 cat("Reading references...\n")
 ref = fread(cmd = sprintf('grep -v "^#" %s', referenceTable),
-	header = FALSE,
-	col.names = c("cell_line", "marker", "accession", "rep", "path", "src"),
-	key = "accession")
+	#col.names = c("cell_line", "marker", "accession", "rep", "path", "src"),
+	key = "track_accession")
 
-bw.files = with(ref, setNames(path, accession))
-allFilesExist = file.exists(bw.files)
-if ( !all(file.exists(bw.files)) )
-	print(bw.files[!allFilesExist])
+track.files = with(ref, setNames(path, track_accession))
+allFilesExist = file.exists(track.files)
+if ( !all(file.exists(track.files)) )
+	print(track.files[!allFilesExist])
 stopifnot( all(allFilesExist) )
 
-epig = rbindlist(lapply(seq_along(bw.files),
+epig = rbindlist(pblapply(seq_along(track.files),
 	function(i, bins) {
-		x = bw.files[i]
-		accession = names(bw.files)[i]
+		x = track.files[i]
+		accession = names(track.files)[i]
 		cat(sprintf("Processing '%s'\n", x))
 		ext = getFullExt(x)
 		fileList = file.path(outputFolder,
@@ -66,9 +70,9 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		
 		if ( any(!file.exists(fileList)) ) {
 			out = NULL
-			if ( 0 != nchar(ref[accession, src]) ) {
-				if ( file.exists(ref[accession, src]) )
-					source(ref[accession, src], local = T)
+			if ( 0 != nchar(ref[accession, custom_script_path]) ) {
+				if ( file.exists(ref[accession, custom_script_path]) )
+					source(ref[accession, custom_script_path], local = T)
 			} else {
 				if ( ext %in% c("bed", "bed.gz") )
 					out = processBed(x, bins, chromosomes)
@@ -87,13 +91,15 @@ epig = rbindlist(lapply(seq_along(bw.files),
 				# If it reaches here, no format recognized
 			}
 			if ( !is.null(out) ) {
-				out$accession = accession
+				out$track_accession = accession
 
-				setkeyv(out, "accession")
-				out = out[ref[, list(accession, cell_line, marker, rep)], nomatch = 0]
+				setkeyv(out, "track_accession")
+				out = out[ref[, list(project_accession, exp_id, track_accession,
+					rep, cell_line, marker)], nomatch = 0]
 				setnames(out, "seqnames", "chrom")
 				setcolorder(out, c("chrom", "start", "end", "score",
-					"cell_line", "marker", "type", "rep", "accession"))
+					"cell_line", "marker", "type", "rep",
+					"project_accession", "exp_id", "track_accession"))
 				out[, `:=`(start = as.numeric(start), end = as.numeric(end))]
 
 				dt = split(out, out[, bins])
@@ -104,7 +110,7 @@ epig = rbindlist(lapply(seq_along(bw.files),
 
 					dt[[k]] = getTranslocationCoordinates_binned(dt[[k]])
 
-					at = split(dt[[k]], unique(dt[[k]][, accession]))
+					at = split(dt[[k]], unique(dt[[k]][, track_accession]))
 					for ( j in seq_along(at) ) {
 						binlabel = at[[j]][1, bins]
 						at[[j]][, bins := NULL]
@@ -124,11 +130,11 @@ epig = rbindlist(lapply(seq_along(bw.files),
 		out = list()
 		for ( binLabel in names(bins) ) {
 			out[[binLabel]] = readRDS(file.path(outputFolder,
-				paste0(names(bw.files)[i], ".epig.", binLabel, ".rds")))
+				paste0(names(track.files)[i], ".epig.", binLabel, ".rds")))
 			out[[binLabel]]$bins = binLabel
 		}
 		return(rbindlist(out))
-	}, bins
+	}, bins, cl = threads
 ))
 
 cat("Merging tracks...\n")
