@@ -43,15 +43,15 @@ HeLa-S3	EP300			ENCFF289TVJ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF2
 HeLa-S3	H3K4me1			ENCFF255NQJ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF255NQJ.bigWig		
 HeLa-S3	Methyl-RRBS	ENCSR000DFL		ENCFF001TMV	2	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF001TMV.bed.gz		
 HeLa-S3	Methyl-RRBS	ENCSR000DFL		ENCFF001TMU	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF001TMU.bed.gz		
-HAP1	PolII			GSM2871910-11	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/RNAPolII_signal_over_control_ratio.bigWig		
+HAP1	PolII	GSE107599		GSM2871910-11	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/RNAPolII_signal_over_control_ratio.bigWig		
 HAP1	PolII	GSE108387	C631	SRR6410098	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/PolII_C631_signal_over_control_ratio.bigWig		
 HAP1	DamID-LaminB	ts190410		ts190410-c2	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r2_LMNB1-5kb.bw		
 HAP1	DamID-LaminB	ts190410		ts190410-c1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r1_LMNB1-5kb.bw		
 HAP1	DamID-LaminB-log2OE	ts190410		ts190410-n12	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_LMNB1-5kb-combined.bw		
 HAP1	H3K9me3	GSE108387	9217	SRR6410079-80	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K9me3_9217_signal_over_control_ratio.bigWig		
 HAP1	H3K9me3	GSE108387	11023	SRR6410078	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K9me3_11023_signal_over_control_ratio.bigWig		
-HAP1	H3K56ac			GSM2871906-07	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K56ac_signal_over_control_ratio.bigWig		
-HAP1	H3K4me3			GSM2871902-03	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_signal_over_control_ratio.bigWig		
+HAP1	H3K56ac	GSE107599		GSM2871906-07	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K56ac_signal_over_control_ratio.bigWig		
+HAP1	H3K4me3	GSE107599		GSM2871902-03	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_signal_over_control_ratio.bigWig		
 HAP1	H3K4me3	GSE108387	9217	SRR6410076-77	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_9217_signal_over_control_ratio.bigWig		
 HAP1	H3K4me3	GSE108387	11023	SRR6410075	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_11023_signal_over_control_ratio.bigWig		
 HAP1	H3K4me1	GSE108387	9217	SRR6410073-74	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me1_9217_signal_over_control_ratio.bigWig		
@@ -59,12 +59,12 @@ HAP1	H3K4me1	GSE108387	11023	SRR6410072	1	/media/MiSo/bioTrackBinner/raw_data/HA
 HAP1	H3K36me3	GSE108387	9217	SRR6410070-71	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K36me3_9217_signal_over_control_ratio.bigWig		
 HAP1	H3K27me3	GSE108387	9217	SRR6410068	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27me3_9217_signal_over_control_ratio.bigWig		
 HAP1	H3K27me3	GSE108387	11023	SRR6410067	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27me3_11023_signal_over_control_ratio.bigWig		
-HAP1	H3K27ac			GSM2871898-89	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_signal_over_control_ratio.bigWig		
+HAP1	H3K27ac	GSE107599		GSM2871898-89	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_signal_over_control_ratio.bigWig		
 HAP1	H3K27ac	GSE108387	9217	SRR6410066	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_9217_signal_over_control_ratio.bigWig		
 HAP1	H3K27ac	GSE108387	11023	SRR6410061-65	1,2,3	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_11023_signal_over_control_ratio.bigWig		
 HAP1	DNAse-seq	ENCSR620QNS		ENCFF485YQE	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF485YQE.bigWig		
 HAP1	DNAse-seq	ENCSR620QNS		ENCFF095QLZ	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF095QLZ.bigWig		
-HAP1	CTCF			SRR5266526	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_signal_over_control_ratio.bigWig		
+HAP1	CTCF	GSE94992		SRR5266526	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_signal_over_control_ratio.bigWig		
 HAP1	CTCF	GSE108387	9217	SRR6410060	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_9217_signal_over_control_ratio.bigWig		
 HAP1	ATAC-seq	GSE111047		SRR6766911	3	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_3_treat_pileup.bdg		
 HAP1	ATAC-seq	GSE111047		SRR6766910	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_2_treat_pileup.bdg		
