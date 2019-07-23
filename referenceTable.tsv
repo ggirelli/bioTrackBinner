@@ -69,3 +69,8 @@ HAP1	CTCF	GSE108387	9217	SRR6410060	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/C
 HAP1	ATAC-seq	GSE111047		SRR6766911	3	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_3_treat_pileup.bdg		
 HAP1	ATAC-seq	GSE111047		SRR6766910	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_2_treat_pileup.bdg		
 HAP1	ATAC-seq	GSE111047		SRR6766909	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_1_treat_pileup.bdg		
+HAP1	H3K4me1	HAP1_deWitt_ChIP-seq		deWitt_K4me1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K4mono_MQ10.bw		
+HAP1	H3K4me3	HAP1_deWitt_ChIP-seq		deWitt_K4me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K4tri_MQ10.bw		
+HAP1	H3K9me3	HAP1_deWitt_ChIP-seq		deWitt_K9me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K9tri_MQ10.bw		
+HAP1	H3K27me3	HAP1_deWitt_ChIP-seq		deWitt_H27me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K27tri_MQ10.bw		
+HAP1	H3K36me3	HAP1_deWitt_ChIP-seq		deWitt_H36me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K36tri_MQ10.bw		
