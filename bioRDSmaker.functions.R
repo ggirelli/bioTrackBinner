@@ -7,6 +7,7 @@ getFullExt = function(x) {
 }
 
 process_single_bin = function(b, ftype, tmp){
+	b = keepSeqlevels(b, seqlevels(tmp), pruning.mode = "coarse")
 	sco = sapply(seq(1, length(b), 1e3),
 		function(bi) {
 			bi = as.numeric(as.character(bi))
@@ -37,6 +38,7 @@ processBedGraph = function(x, bins, chromosomes) {
 
 processBigWig = function(x, bins, chromosomes){
 	tmp = import.bw(x, as = "Rle")
+	chromosomes = intersect(chromosomes, seqlevels(tmp))
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
 	seqinfo(tmp) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)[chromosomes]
 	rbindlist(lapply(bins, process_single_bin,

@@ -70,7 +70,7 @@ epig = rbindlist(pblapply(seq_along(track.files),
 		
 		if ( any(!file.exists(fileList)) ) {
 			out = NULL
-			if ( 0 != nchar(ref[accession, custom_script_path]) ) {
+			if ( !is.na(ref[accession, custom_script_path]) ) {
 				if ( file.exists(ref[accession, custom_script_path]) )
 					source(ref[accession, custom_script_path], local = T)
 			} else {

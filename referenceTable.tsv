@@ -74,3 +74,11 @@ HAP1	H3K4me3	HAP1_deWitt_ChIP-seq		deWitt_K4me3	1	/media/MiSo/bioTrackBinner/raw
 HAP1	H3K9me3	HAP1_deWitt_ChIP-seq		deWitt_K9me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K9tri_MQ10.bw		
 HAP1	H3K27me3	HAP1_deWitt_ChIP-seq		deWitt_H27me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K27tri_MQ10.bw		
 HAP1	H3K36me3	HAP1_deWitt_ChIP-seq		deWitt_H36me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K36tri_MQ10.bw		
+K562	RepliSeq-G1	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562G1PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562G1PctSignalRep1.bigWig		
+K562	RepliSeq-G2	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562G2PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562G2PctSignalRep1.bigWig		
+K562	RepliSeq-S1	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S1PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S1PctSignalRep1.bigWig		
+K562	RepliSeq-S2	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S2PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S2PctSignalRep1.bigWig		
+K562	RepliSeq-S3	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1.bigWig		
+K562	RepliSeq-S4	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1.bigWig		
+K562	RepliSeq-sum	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1.bigWig		
+K562	RepliSeq-wave	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1.bigWig		
