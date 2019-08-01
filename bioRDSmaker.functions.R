@@ -7,7 +7,7 @@ getFullExt = function(x) {
 }
 
 process_single_bin = function(b, ftype, tmp){
-	b = keepSeqlevels(b, seqlevels(tmp), pruning.mode = "coarse")
+	b = keepSeqlevels(b, intersect(seqlevels(b), seqlevels(tmp)), pruning.mode = "coarse")
 	sco = sapply(seq(1, length(b), 1e3),
 		function(bi) {
 			bi = as.numeric(as.character(bi))
@@ -23,6 +23,7 @@ processBed = function(x, bins, chromosomes) {
 		seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19),
 		trackLine = FALSE)
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
+	if ( !"score" %in% names(tmp) ) tmp$score = 1
 	tmp = coverage(tmp, weight = tmp$score)
 	rbindlist(lapply(bins, process_single_bin,
 		ftype = "bed", tmp = tmp), idcol = "bins")

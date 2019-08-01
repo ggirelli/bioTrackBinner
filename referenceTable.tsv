@@ -82,3 +82,5 @@ K562	RepliSeq-S3	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1
 K562	RepliSeq-S4	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1.bigWig		
 K562	RepliSeq-sum	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1.bigWig		
 K562	RepliSeq-wave	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1.bigWig		
+K562	RepliSeq-peaks	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562PkRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562PkRep1.bed	/media/MiSo/bioTrackBinner/custom_source/process.RepliSeq.PeakValleys.R	
+K562	RepliSeq-valleys	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562ValleysRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562ValleysRep1.bed	/media/MiSo/bioTrackBinner/custom_source/process.RepliSeq.PeakValleys.R	
