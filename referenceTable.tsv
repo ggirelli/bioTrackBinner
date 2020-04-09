@@ -1,86 +1,87 @@
-cell_line	marker	project_accession	exp_id	track_accession	rep	path	custom_script_path	notes
-KBM7	DamID-LaminB-log2OE			S0092867415010922	1	/media/MiSo/bioTrackBinner/raw_data/KBM7/DataS1_Clone.14.1N.OE.txt	/media/MiSo/bioTrackBinner/custom_source/process.S0092867415010922.R	
-K562	Methyl-450			Methyl450K562Rep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/wgEncodeHaibMethyl450K562SitesRep1.bed.gz		
-K562	H3K9me3			ENCFF834YLI	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF834YLI.bigWig		
-K562	DNAse-seq			ENCFF789QUY	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF789QUY.bigWig		
-K562	H3K36me3			ENCFF745HXR	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF745HXR.bigWig		
-K562	H3K4me3			ENCFF689TMV	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF689TMV.bigWig		
-K562	H3K27me3			ENCFF445UCR	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF445UCR.bigWig		
-K562	H3K27me3			ENCFF312LYO	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF312LYO.bigWig		
-K562	Methyl-RRBS	ENCSR000DFK		ENCFF001TOM	2	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF001TOM.bed.gz		
-K562	Methyl-RRBS	ENCSR000DFK		ENCFF001TOL	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF001TOL.bed.gz		
-K562	ATAC-seq	GSE121993		SRR8137175	2	/media/MiSo/bioTrackBinner/raw_data/K562/ATACseq_Chromatin_Control_K562_2_treat_pileup.bdg		
-K562	ATAC-seq	GSE121993		SRR8137174	1	/media/MiSo/bioTrackBinner/raw_data/K562/ATACseq_Chromatin_Control_K562_1_treat_pileup.bdg		
-IMR90	H3K4me3			SRR4413993	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/H3K4me3_signal_over_control_ratio.bigWig		
-IMR90	H3K27ac			SRR4413992	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/H3K27ac_signal_over_control_ratio.bigWig		
-IMR90	H3K27ac			ENCFF834HNV	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF834HNV.bigWig		
-IMR90	H3K9ac			ENCFF792ZIY	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF792ZIY.bigWig		
-IMR90	CTCF			ENCFF603PYX	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF603PYX.bigWig		
-IMR90	H3K9me1			ENCFF437KYU	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF437KYU.bigWig		
-IMR90	H3K9me3			ENCFF272ZUB	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF272ZUB.bigWig		
-IMR90	H3K27me3			ENCFF062LIE	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF062LIE.bigWig		
-IMR90	Methyl-RRBS			ENCFF001TOI	2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF001TOI.bed.gz		
-IMR90	Methyl-RRBS			ENCFF001TOH	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF001TOH.bed.gz		
-HMEC	Methyl-450			Methyl450HmecRep1	1	/media/MiSo/bioTrackBinner/raw_data/HMEC/wgEncodeHaibMethyl450HmecSitesRep1.bed.gz		
-HMEC	Methyl-RRBS	ENCSR000DGA		ENCFF001TNH	2	/media/MiSo/bioTrackBinner/raw_data/HMEC/ENCFF001TNH.bed.gz		
-HMEC	Methyl-RRBS	ENCSR000DGA		ENCFF001TNG	1	/media/MiSo/bioTrackBinner/raw_data/HMEC/ENCFF001TNG.bed.gz		
-HeLa	H3K9me3			GSE95456	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE95456_H3K9me3_scores.xlsx		
-HeLa	H3K9me3			GSE86811	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE86811_H3K9me3_scores.txt		
-HeLa	H3K9me3			GSE63116	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE63116_HeLa_H3K9me3_windowScores.txt		
-HeLa-S3	Methyl-450			Methyl450Helas3Rep1	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/wgEncodeHaibMethyl450Helas3SitesRep1.bed.gz		
-HeLa-S3	POLR2A			ENCFF959MZN	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF959MZN.bigWig		
-HeLa-S3	H3K27me3			ENCFF958BAN	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF958BAN.bigWig		
-HeLa-S3	EZH2			ENCFF920YXQ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF920YXQ.bigWig		
-HeLa-S3	CTCF			ENCFF799KLZ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF799KLZ.bigWig		
-HeLa-S3	H3K9me3			ENCFF761QZP	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF761QZP.bigWig		
-HeLa-S3	H3K4me3			ENCFF699TXY	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF699TXY.bigWig		
-HeLa-S3	MYC			ENCFF609BPN	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF609BPN.bigWig		
-HeLa-S3	H3K9ac			ENCFF573VUK	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF573VUK.bigWig		
-HeLa-S3	H2AFZ			ENCFF532VFI	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF532VFI.bigWig		
-HeLa-S3	H3K4me2			ENCFF391MRG	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF391MRG.bigWig		
-HeLa-S3	H3K27ac			ENCFF388WMD	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF388WMD.bigWig		
-HeLa-S3	EP300			ENCFF289TVJ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF289TVJ.bigWig		
-HeLa-S3	H3K4me1			ENCFF255NQJ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF255NQJ.bigWig		
-HeLa-S3	Methyl-RRBS	ENCSR000DFL		ENCFF001TMV	2	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF001TMV.bed.gz		
-HeLa-S3	Methyl-RRBS	ENCSR000DFL		ENCFF001TMU	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF001TMU.bed.gz		
-HAP1	PolII	GSE107599		GSM2871910-11	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/RNAPolII_signal_over_control_ratio.bigWig		
-HAP1	PolII	GSE108387	C631	SRR6410098	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/PolII_C631_signal_over_control_ratio.bigWig		
-HAP1	DamID-LaminB	ts190410		ts190410-c2	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r2_LMNB1-5kb.bw		
-HAP1	DamID-LaminB	ts190410		ts190410-c1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r1_LMNB1-5kb.bw		
-HAP1	DamID-LaminB-log2OE	ts190410		ts190410-n12	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_LMNB1-5kb-combined.bw		
-HAP1	H3K9me3	GSE108387	9217	SRR6410079-80	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K9me3_9217_signal_over_control_ratio.bigWig		
-HAP1	H3K9me3	GSE108387	11023	SRR6410078	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K9me3_11023_signal_over_control_ratio.bigWig		
-HAP1	H3K56ac	GSE107599		GSM2871906-07	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K56ac_signal_over_control_ratio.bigWig		
-HAP1	H3K4me3	GSE107599		GSM2871902-03	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_signal_over_control_ratio.bigWig		
-HAP1	H3K4me3	GSE108387	9217	SRR6410076-77	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_9217_signal_over_control_ratio.bigWig		
-HAP1	H3K4me3	GSE108387	11023	SRR6410075	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_11023_signal_over_control_ratio.bigWig		
-HAP1	H3K4me1	GSE108387	9217	SRR6410073-74	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me1_9217_signal_over_control_ratio.bigWig		
-HAP1	H3K4me1	GSE108387	11023	SRR6410072	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me1_11023_signal_over_control_ratio.bigWig		
-HAP1	H3K36me3	GSE108387	9217	SRR6410070-71	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K36me3_9217_signal_over_control_ratio.bigWig		
-HAP1	H3K27me3	GSE108387	9217	SRR6410068	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27me3_9217_signal_over_control_ratio.bigWig		
-HAP1	H3K27me3	GSE108387	11023	SRR6410067	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27me3_11023_signal_over_control_ratio.bigWig		
-HAP1	H3K27ac	GSE107599		GSM2871898-89	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_signal_over_control_ratio.bigWig		
-HAP1	H3K27ac	GSE108387	9217	SRR6410066	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_9217_signal_over_control_ratio.bigWig		
-HAP1	H3K27ac	GSE108387	11023	SRR6410061-65	1,2,3	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_11023_signal_over_control_ratio.bigWig		
-HAP1	DNAse-seq	ENCSR620QNS		ENCFF485YQE	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF485YQE.bigWig		
-HAP1	DNAse-seq	ENCSR620QNS		ENCFF095QLZ	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF095QLZ.bigWig		
-HAP1	CTCF	GSE94992		SRR5266526	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_signal_over_control_ratio.bigWig		
-HAP1	CTCF	GSE108387	9217	SRR6410060	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_9217_signal_over_control_ratio.bigWig		
-HAP1	ATAC-seq	GSE111047		SRR6766911	3	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_3_treat_pileup.bdg		
-HAP1	ATAC-seq	GSE111047		SRR6766910	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_2_treat_pileup.bdg		
-HAP1	ATAC-seq	GSE111047		SRR6766909	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_1_treat_pileup.bdg		
-HAP1	H3K4me1	HAP1_deWitt_ChIP-seq		deWitt_K4me1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K4mono_MQ10.bw		
-HAP1	H3K4me3	HAP1_deWitt_ChIP-seq		deWitt_K4me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K4tri_MQ10.bw		
-HAP1	H3K9me3	HAP1_deWitt_ChIP-seq		deWitt_K9me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K9tri_MQ10.bw		
-HAP1	H3K27me3	HAP1_deWitt_ChIP-seq		deWitt_H27me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K27tri_MQ10.bw		
-HAP1	H3K36me3	HAP1_deWitt_ChIP-seq		deWitt_H36me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K36tri_MQ10.bw		
-K562	RepliSeq-G1	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562G1PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562G1PctSignalRep1.bigWig		
-K562	RepliSeq-G2	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562G2PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562G2PctSignalRep1.bigWig		
-K562	RepliSeq-S1	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S1PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S1PctSignalRep1.bigWig		
-K562	RepliSeq-S2	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S2PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S2PctSignalRep1.bigWig		
-K562	RepliSeq-S3	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1.bigWig		
-K562	RepliSeq-S4	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1.bigWig		
-K562	RepliSeq-sum	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1.bigWig		
-K562	RepliSeq-wave	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1.bigWig		
-K562	RepliSeq-peaks	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562PkRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562PkRep1.bed	/media/MiSo/bioTrackBinner/custom_source/process.RepliSeq.PeakValleys.R	
-K562	RepliSeq-valleys	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562ValleysRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562ValleysRep1.bed	/media/MiSo/bioTrackBinner/custom_source/process.RepliSeq.PeakValleys.R	
+cell_line	marker	project_accession	exp_id	track_accession	rep	path	custom_script_path
+RPE	DamID-LaminB-sigOverCtrl			4DNFIMUFK911	1,2	/media/MiSo/bioTrackBinner/raw_data/RPE/4DNFIMUFK911.liftedToHg19.bw	
+KBM7	DamID-LaminB-log2OE			S0092867415010922	1	/media/MiSo/bioTrackBinner/raw_data/KBM7/DataS1_Clone.14.1N.OE.txt	/media/MiSo/bioTrackBinner/custom_source/process.S0092867415010922.R
+K562	Methyl-450			Methyl450K562Rep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/wgEncodeHaibMethyl450K562SitesRep1.bed.gz	
+K562	H3K9me3			ENCFF834YLI	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF834YLI.bigWig	
+K562	DNAse-seq			ENCFF789QUY	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF789QUY.bigWig	
+K562	H3K36me3			ENCFF745HXR	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF745HXR.bigWig	
+K562	H3K4me3			ENCFF689TMV	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF689TMV.bigWig	
+K562	H3K27me3			ENCFF445UCR	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF445UCR.bigWig	
+K562	H3K27me3			ENCFF312LYO	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF312LYO.bigWig	
+K562	Methyl-RRBS	ENCSR000DFK		ENCFF001TOM	2	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF001TOM.bed.gz	
+K562	Methyl-RRBS	ENCSR000DFK		ENCFF001TOL	1	/media/MiSo/bioTrackBinner/raw_data/K562/ENCFF001TOL.bed.gz	
+K562	ATAC-seq	GSE121993		SRR8137175	2	/media/MiSo/bioTrackBinner/raw_data/K562/ATACseq_Chromatin_Control_K562_2_treat_pileup.bdg	
+K562	ATAC-seq	GSE121993		SRR8137174	1	/media/MiSo/bioTrackBinner/raw_data/K562/ATACseq_Chromatin_Control_K562_1_treat_pileup.bdg	
+IMR90	H3K4me3			SRR4413993	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/H3K4me3_signal_over_control_ratio.bigWig	
+IMR90	H3K27ac			SRR4413992	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/H3K27ac_signal_over_control_ratio.bigWig	
+IMR90	H3K27ac			ENCFF834HNV	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF834HNV.bigWig	
+IMR90	H3K9ac			ENCFF792ZIY	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF792ZIY.bigWig	
+IMR90	CTCF			ENCFF603PYX	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF603PYX.bigWig	
+IMR90	H3K9me1			ENCFF437KYU	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF437KYU.bigWig	
+IMR90	H3K9me3			ENCFF272ZUB	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF272ZUB.bigWig	
+IMR90	H3K27me3			ENCFF062LIE	1,2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF062LIE.bigWig	
+IMR90	Methyl-RRBS			ENCFF001TOI	2	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF001TOI.bed.gz	
+IMR90	Methyl-RRBS			ENCFF001TOH	1	/media/MiSo/bioTrackBinner/raw_data/IMR90/ENCFF001TOH.bed.gz	
+HMEC	Methyl-450			Methyl450HmecRep1	1	/media/MiSo/bioTrackBinner/raw_data/HMEC/wgEncodeHaibMethyl450HmecSitesRep1.bed.gz	
+HMEC	Methyl-RRBS	ENCSR000DGA		ENCFF001TNH	2	/media/MiSo/bioTrackBinner/raw_data/HMEC/ENCFF001TNH.bed.gz	
+HMEC	Methyl-RRBS	ENCSR000DGA		ENCFF001TNG	1	/media/MiSo/bioTrackBinner/raw_data/HMEC/ENCFF001TNG.bed.gz	
+HeLa	H3K9me3			GSE95456	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE95456_H3K9me3_scores.xlsx	
+HeLa	H3K9me3			GSE86811	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE86811_H3K9me3_scores.txt	
+HeLa	H3K9me3			GSE63116	1	/media/MiSo/bioTrackBinner/raw_data/HeLa/GSE63116_HeLa_H3K9me3_windowScores.txt	
+HeLa-S3	Methyl-450			Methyl450Helas3Rep1	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/wgEncodeHaibMethyl450Helas3SitesRep1.bed.gz	
+HeLa-S3	POLR2A			ENCFF959MZN	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF959MZN.bigWig	
+HeLa-S3	H3K27me3			ENCFF958BAN	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF958BAN.bigWig	
+HeLa-S3	EZH2			ENCFF920YXQ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF920YXQ.bigWig	
+HeLa-S3	CTCF			ENCFF799KLZ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF799KLZ.bigWig	
+HeLa-S3	H3K9me3			ENCFF761QZP	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF761QZP.bigWig	
+HeLa-S3	H3K4me3			ENCFF699TXY	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF699TXY.bigWig	
+HeLa-S3	MYC			ENCFF609BPN	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF609BPN.bigWig	
+HeLa-S3	H3K9ac			ENCFF573VUK	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF573VUK.bigWig	
+HeLa-S3	H2AFZ			ENCFF532VFI	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF532VFI.bigWig	
+HeLa-S3	H3K4me2			ENCFF391MRG	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF391MRG.bigWig	
+HeLa-S3	H3K27ac			ENCFF388WMD	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF388WMD.bigWig	
+HeLa-S3	EP300			ENCFF289TVJ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF289TVJ.bigWig	
+HeLa-S3	H3K4me1			ENCFF255NQJ	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF255NQJ.bigWig	
+HeLa-S3	Methyl-RRBS	ENCSR000DFL		ENCFF001TMV	2	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF001TMV.bed.gz	
+HeLa-S3	Methyl-RRBS	ENCSR000DFL		ENCFF001TMU	1	/media/MiSo/bioTrackBinner/raw_data/HeLa-S3/ENCFF001TMU.bed.gz	
+HAP1	PolII	GSE107599		GSM2871910-11	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/RNAPolII_signal_over_control_ratio.bigWig	
+HAP1	PolII	GSE108387	C631	SRR6410098	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/PolII_C631_signal_over_control_ratio.bigWig	
+HAP1	DamID-LaminB	ts190410		ts190410-c2	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r2_LMNB1-5kb.bw	
+HAP1	DamID-LaminB	ts190410		ts190410-c1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_r1_LMNB1-5kb.bw	
+HAP1	DamID-LaminB-sigOverCtrl	ts190410		ts190410-n12	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_LMNB1-5kb-combined.bw	
+HAP1	H3K9me3	GSE108387	9217	SRR6410079-80	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K9me3_9217_signal_over_control_ratio.bigWig	
+HAP1	H3K9me3	GSE108387	11023	SRR6410078	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K9me3_11023_signal_over_control_ratio.bigWig	
+HAP1	H3K56ac	GSE107599		GSM2871906-07	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K56ac_signal_over_control_ratio.bigWig	
+HAP1	H3K4me3	GSE107599		GSM2871902-03	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_signal_over_control_ratio.bigWig	
+HAP1	H3K4me3	GSE108387	9217	SRR6410076-77	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_9217_signal_over_control_ratio.bigWig	
+HAP1	H3K4me3	GSE108387	11023	SRR6410075	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me3_11023_signal_over_control_ratio.bigWig	
+HAP1	H3K4me1	GSE108387	9217	SRR6410073-74	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me1_9217_signal_over_control_ratio.bigWig	
+HAP1	H3K4me1	GSE108387	11023	SRR6410072	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K4me1_11023_signal_over_control_ratio.bigWig	
+HAP1	H3K36me3	GSE108387	9217	SRR6410070-71	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K36me3_9217_signal_over_control_ratio.bigWig	
+HAP1	H3K27me3	GSE108387	9217	SRR6410068	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27me3_9217_signal_over_control_ratio.bigWig	
+HAP1	H3K27me3	GSE108387	11023	SRR6410067	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27me3_11023_signal_over_control_ratio.bigWig	
+HAP1	H3K27ac	GSE107599		GSM2871898-89	1,2	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_signal_over_control_ratio.bigWig	
+HAP1	H3K27ac	GSE108387	9217	SRR6410066	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_9217_signal_over_control_ratio.bigWig	
+HAP1	H3K27ac	GSE108387	11023	SRR6410061-65	1,2,3	/media/MiSo/bioTrackBinner/raw_data/HAP1/H3K27ac_11023_signal_over_control_ratio.bigWig	
+HAP1	DNAse-seq	ENCSR620QNS		ENCFF485YQE	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF485YQE.bigWig	
+HAP1	DNAse-seq	ENCSR620QNS		ENCFF095QLZ	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ENCFF095QLZ.bigWig	
+HAP1	CTCF	GSE94992		SRR5266526	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_signal_over_control_ratio.bigWig	
+HAP1	CTCF	GSE108387	9217	SRR6410060	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/CTCF_9217_signal_over_control_ratio.bigWig	
+HAP1	ATAC-seq	GSE111047		SRR6766911	3	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_3_treat_pileup.bdg	
+HAP1	ATAC-seq	GSE111047		SRR6766910	2	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_2_treat_pileup.bdg	
+HAP1	ATAC-seq	GSE111047		SRR6766909	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/ATACseq_Chromatin_Control_HAP1_1_treat_pileup.bdg	
+HAP1	H3K4me1	HAP1_deWitt_ChIP-seq		deWitt_K4me1	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K4mono_MQ10.bw	
+HAP1	H3K4me3	HAP1_deWitt_ChIP-seq		deWitt_K4me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K4tri_MQ10.bw	
+HAP1	H3K9me3	HAP1_deWitt_ChIP-seq		deWitt_K9me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K9tri_MQ10.bw	
+HAP1	H3K27me3	HAP1_deWitt_ChIP-seq		deWitt_H27me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K27tri_MQ10.bw	
+HAP1	H3K36me3	HAP1_deWitt_ChIP-seq		deWitt_H36me3	1	/media/MiSo/bioTrackBinner/raw_data/HAP1/Hap1_K36tri_MQ10.bw	
+K562	RepliSeq-G1	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562G1PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562G1PctSignalRep1.bigWig	
+K562	RepliSeq-G2	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562G2PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562G2PctSignalRep1.bigWig	
+K562	RepliSeq-S1	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S1PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S1PctSignalRep1.bigWig	
+K562	RepliSeq-S2	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S2PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S2PctSignalRep1.bigWig	
+K562	RepliSeq-S3	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S3PctSignalRep1.bigWig	
+K562	RepliSeq-S4	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562S4PctSignalRep1.bigWig	
+K562	RepliSeq-sum	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562SumSignalRep1.bigWig	
+K562	RepliSeq-wave	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562WaveSignalRep1.bigWig	
+K562	RepliSeq-peaks	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562PkRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562PkRep1.bed	/media/MiSo/bioTrackBinner/custom_source/process.RepliSeq.PeakValleys.R
+K562	RepliSeq-valleys	GSM923448		GSM923448_hg19_wgEncodeUwRepliSeqK562ValleysRep1	1	/media/MiSo/bioTrackBinner/raw_data/K562/GSM923448_hg19_wgEncodeUwRepliSeqK562ValleysRep1.bed	/media/MiSo/bioTrackBinner/custom_source/process.RepliSeq.PeakValleys.R

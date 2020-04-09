@@ -73,7 +73,8 @@ epig = rbindlist(pblapply(seq_along(track.files),
 			if ( !is.na(ref[accession, custom_script_path]) ) {
 				if ( file.exists(ref[accession, custom_script_path]) )
 					source(ref[accession, custom_script_path], local = T)
-			} else {
+			}
+			if ( is.null(out) ) {
 				if ( ext %in% c("bed", "bed.gz") )
 					out = processBed(x, bins, chromosomes)
 				if ( "bdg" == ext )
