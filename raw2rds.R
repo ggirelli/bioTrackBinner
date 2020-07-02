@@ -20,6 +20,8 @@ parser = add_argument(parser, arg = 'binsTable',
 parser = add_argument(parser, arg = 'outputFolder',
 	help = paste0('Path to output folder for intermediate single-track RDS',
 		', created if missing.'))
+parser = add_argument(parser, arg = 'finalFolder',
+        help = paste0('Path to output folder for final RDS, created if missing.'))
 parser = add_argument(parser, arg = '--threads', short = '-t', type = class(0),
 	help = 'Number of threads for parallelization.', default = 1, nargs = 1)
 p = parse_args(parser)
@@ -141,4 +143,4 @@ epig = rbindlist(pblapply(seq_along(track.files),
 cat("Merging tracks...\n")
 dt = split(epig, epig[, bins])
 for ( i in seq_along(bins) )
-	saveRDS(dt[[i]], file = sprintf("epig.%s.rds", dt[[i]][1, bins]))
+	saveRDS(dt[[i]], file = file.path(finalFolder, sprintf("epig.%s.rds", dt[[i]][1, bins])))
