@@ -1,8 +1,5 @@
 #!/usr/bin/env Rscript
 
-suppressMessages(require(pbapply))
-pboptions(type = "timer")
-
 suppressMessages(require(argparser))
 parser = arg_parser(paste0(
 		'Bins biological data tracks and generates corresponding RDS files. ',
@@ -31,6 +28,7 @@ chromosomes = paste0("chr", c(1:22, "X", "Y"))
 
 suppressMessages(require(data.table))
 suppressMessages(require(pbapply))
+pboptions(type = "timer")
 suppressMessages(require(readxl))
 suppressMessages(require(rtracklayer))
 suppressMessages(require(BSgenome.Hsapiens.UCSC.hg19))
