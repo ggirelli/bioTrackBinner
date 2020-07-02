@@ -61,14 +61,14 @@ if ( !all(file.exists(track.files)) )
 	print(track.files[!allFilesExist])
 stopifnot( all(allFilesExist) )
 
-epig = rbindlist(pblapply(seq_along(track.files),
+tracks = rbindlist(pblapply(seq_along(track.files),
 	function(i, bins) {
 		x = track.files[i]
 		accession = names(track.files)[i]
 		cat(sprintf("Processing '%s'\n", x))
 		ext = getFullExt(x)
 		fileList = file.path(outputFolder,
-			paste0(accession, ".epig.", names(bins), ".rds"))
+			paste0(accession, ".", prefix, ".", names(bins), ".rds"))
 		
 		if ( any(!file.exists(fileList)) ) {
 			out = NULL
@@ -117,7 +117,7 @@ epig = rbindlist(pblapply(seq_along(track.files),
 					for ( j in seq_along(at) ) {
 						binlabel = at[[j]][1, bins]
 						at[[j]][, bins := NULL]
-						fName = sprintf("%s.epig.%s.rds", names(at)[j], binlabel)
+						fName = sprintf("%s.%s.%s.rds", names(at)[j], prefix, binlabel)
 						if ( !file.exists(fName) )
 							saveRDS(at[[j]], file = file.path(outputFolder, fName))
 					}
@@ -133,7 +133,7 @@ epig = rbindlist(pblapply(seq_along(track.files),
 		out = list()
 		for ( binLabel in names(bins) ) {
 			out[[binLabel]] = readRDS(file.path(outputFolder,
-				paste0(names(track.files)[i], ".epig.", binLabel, ".rds")))
+				paste0(names(track.files)[i], ".", prefix, ".", binLabel, ".rds")))
 			out[[binLabel]]$bins = binLabel
 		}
 		return(rbindlist(out))
@@ -141,6 +141,6 @@ epig = rbindlist(pblapply(seq_along(track.files),
 ))
 
 cat("Merging tracks...\n")
-dt = split(epig, epig[, bins])
+dt = split(tracks, tracks[, bins])
 for ( i in seq_along(bins) )
 	saveRDS(dt[[i]], file = file.path(finalFolder, sprintf("%s.%s.rds", prefix, dt[[i]][1, bins])))
