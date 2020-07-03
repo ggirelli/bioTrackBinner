@@ -39,6 +39,10 @@ processBedGraph = function(x, bins, chromosomes) {
 
 processBigWig = function(x, bins, chromosomes){
 	tmp = import.bw(x, as = "Rle")
+	if ( all(!grepl("^chr", names(tmp))) ) {
+		seqnames(seqinfo(tmp)) = paste0("chr", seqnames(seqinfo(tmp)))
+		names(tmp) = paste0("chr", names(tmp))
+	}
 	chromosomes = intersect(chromosomes, seqlevels(tmp))
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
 	seqinfo(tmp) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)[chromosomes]
