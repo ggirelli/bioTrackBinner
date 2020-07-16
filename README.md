@@ -4,13 +4,5 @@
 
 R script to bin biological tracks from different bio-formats into tables conveniently stored in `rds` files.
 
-Supports the following formats:
-
-- Bed
-- BedGraph
-- BigWig
-- Cod
-- Text
-- Xlsx
-
-Custom code can be provided *on the fly* for currently unsupported or *esotic* file formats.
+- Supports the following formats: bed, bedGraph, bigWig, cod, txt, xlsx.
+- Custom code can be provided *on the fly* for currently unsupported or *esotic* file formats.
