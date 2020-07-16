@@ -1,7 +1,7 @@
 bioTrackBinner
 ===
 
-R script to bin biological tracks from different formats (*e.g.*, BED, BigWig, ...) into `data.table`s conveniently stored in `rds` files.
+R script to bin biological tracks from different bio-formats (*e.g.*, BED, BigWig, ...) into tables conveniently stored in `rds` files.
 
 
 
