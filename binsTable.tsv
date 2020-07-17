@@ -1,2 +1,2 @@
-bins.1MbSize.100kbStep	/media/MiSo/bioTrackBinner/bins/hg19.bins.1MbSize.100kbStep.bed
-bins.100kbSize.100kbStep	/media/MiSo/bioTrackBinner/bins/hg19.bins.100kbSize.100kbStep.bed
+bins.1MbSize.100kbStep	/media/MiSo/bioTrackBinner/bins/hg19.bins.1MbSize.100kbStep.bed	TRUE
+bins.100kbSize.100kbStep	/media/MiSo/bioTrackBinner/bins/hg19.bins.100kbSize.100kbStep.bed	TRUE

@@ -7,7 +7,7 @@ parser = arg_parser(paste0(
 		'one line per track and the following columns: ',
 		'cellLine, markerType, accessionID, replicateID, pathToTrack. ',
 		'The bins table should be a tab-separated no-header table with one ',
-		'line per bin file and the following columns: label, pathToBins. ',
+		'line per bin file and the following columns: label, pathToBins, consistentBinSize. ',
 		'Bin files are expected to be in bed format.'
 	), name = 'raw2rds.R')
 parser = add_argument(parser, arg = 'referenceTable',
@@ -39,7 +39,7 @@ source("bioRDSmaker.functions.R")
 
 cat("Reading bins...\n")
 binRef = fread(cmd = sprintf('grep -v "^#" %s', binsTable), header = F,
-	col.names = c("label", "path"))
+	col.names = c("label", "path", "consistentBinSize"))
 bins = lapply(1:nrow(binRef), FUN = function(binID) {
 	return(import.bed(binRef[binID, path]))
 })
@@ -107,11 +107,12 @@ tracks = rbindlist(pblapply(seq_along(track.files),
 
 				dt = split(out, out[, bins])
 				for ( k in seq_along(bins) ) {
-					properBinSize = width(bins[[dt[[k]][1, bins]]])[1]-1
-					dt[[k]][(dt[[k]][, end - start]) != properBinSize,
-						end := end + properBinSize - (end - start)]
-
-					dt[[k]] = getTranslocationCoordinates_binned(dt[[k]])
+					if (binRef[k, consistentBinSize]) {
+						properBinSize = width(bins[[dt[[k]][1, bins]]])[1]-1
+						dt[[k]][(dt[[k]][, end - start]) != properBinSize,
+							end := end + properBinSize - (end - start)]
+						dt[[k]] = getTranslocationCoordinates_binned(dt[[k]])
+					}
 
 					at = split(dt[[k]], unique(dt[[k]][, track_accession]))
 					for ( j in seq_along(at) ) {
