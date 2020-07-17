@@ -112,6 +112,8 @@ tracks = rbindlist(pblapply(seq_along(track.files),
 						dt[[k]][(dt[[k]][, end - start]) != properBinSize,
 							end := end + properBinSize - (end - start)]
 						dt[[k]] = getTranslocationCoordinates_binned(dt[[k]])
+					} else {
+						dt[[k]][, c("philChrom", "philStart", "philEnd") := .(NA, NA, NA)]
 					}
 
 					at = split(dt[[k]], unique(dt[[k]][, track_accession]))
