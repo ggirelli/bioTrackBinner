@@ -8,10 +8,11 @@ getFullExt = function(x) {
 
 process_single_bin = function(b, ftype, tmp){
 	b = keepSeqlevels(b, intersect(seqlevels(b), seqlevels(tmp)), pruning.mode = "coarse")
-	sco = sapply(seq(1, length(b), 1e3),
+	bby = min(1e3, 10**floor(log10(length(b))))
+	sco = sapply(seq(1, length(b), bby),
 		function(bi) {
 			bi = as.numeric(as.character(bi))
-			sub = b[bi:min(bi + 1e3 - 1, length(b)),]
+			sub = b[bi:min(bi + bby - 1, length(b)),]
 			mean(tmp[sub], na.rm = T)
 		})
 	sco = unlist(sco)
