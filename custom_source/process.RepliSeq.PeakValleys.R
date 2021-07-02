@@ -4,7 +4,7 @@
 # chromosomes: list of chromosomes to evaluate
 
 tmp = import.bed(x,
-	seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19),
+	seqinfo = seqinfo(BSgenome.Mmusculus.UCSC.mm10),
 	trackLine = FALSE)
 
 tmp = as.data.table(tmp)
@@ -12,7 +12,7 @@ tmp[, c("start", "end", "score") := .((start+end)/2, (start+end)/2+1, 1)]
 
 chromLevels = intersect(chromosomes, unique(tmp$seqnames))
 tmp = GRanges(tmp)
-seqinfo(tmp) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)
+seqinfo(tmp) = seqinfo(BSgenome.Mmusculus.UCSC.mm10)
 
 tmp = keepSeqlevels(tmp, chromLevels, pruning.mode = "coarse")
 

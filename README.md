@@ -1,4 +1,4 @@
-# bioTrackBinner
+# bioTrackBinner (mm10)
 
 [![DOI](https://zenodo.org/badge/169576989.svg)](https://zenodo.org/badge/latestdoi/169576989)
 

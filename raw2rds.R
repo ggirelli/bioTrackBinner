@@ -33,7 +33,7 @@ suppressMessages(require(pbapply))
 pboptions(type = "timer")
 suppressMessages(require(readxl))
 suppressMessages(require(rtracklayer))
-suppressMessages(require(BSgenome.Hsapiens.UCSC.hg19))
+suppressMessages(require(BSgenome.Mmusculus.UCSC.mm10))
 source("coordCorrect.functions.R")
 source("bioRDSmaker.functions.R")
 
@@ -47,7 +47,7 @@ names(bins) = binRef$label
 for( i in seq_along(bins) ){
 	bins[[i]] = keepSeqlevels(bins[[i]], chromosomes,
 		pruning.mode = "coarse")
-	seqinfo(bins[[i]]) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)
+	seqinfo(bins[[i]]) = seqinfo(BSgenome.Mmusculus.UCSC.mm10)
 }
 
 cat("Reading references...\n")

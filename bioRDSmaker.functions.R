@@ -21,7 +21,7 @@ process_single_bin = function(b, ftype, tmp){
 
 processBed = function(x, bins, chromosomes) {
 	tmp = import.bed(x,
-		seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19),
+		seqinfo = seqinfo(BSgenome.Mmusculus.UCSC.mm10),
 		trackLine = FALSE)
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
 	if ( !"score" %in% names(tmp) ) tmp$score = 1
@@ -31,7 +31,7 @@ processBed = function(x, bins, chromosomes) {
 }
 
 processBedGraph = function(x, bins, chromosomes) {
-	tmp = import.bedGraph(x, seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19))
+	tmp = import.bedGraph(x, seqinfo = seqinfo(BSgenome.Mmusculus.UCSC.mm10))
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
 	tmp = coverage(tmp, weight = tmp$score)
 	rbindlist(lapply(bins, process_single_bin,
@@ -46,7 +46,7 @@ processBigWig = function(x, bins, chromosomes){
 	}
 	chromosomes = intersect(chromosomes, seqlevels(tmp))
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
-	seqinfo(tmp) = seqinfo(BSgenome.Hsapiens.UCSC.hg19)[chromosomes]
+	seqinfo(tmp) = seqinfo(BSgenome.Mmusculus.UCSC.mm10)[chromosomes]
 	rbindlist(lapply(bins, process_single_bin,
 		ftype = "bigWig", tmp = tmp), idcol = "bins")
 }
@@ -62,7 +62,7 @@ processCod = function(x, bins, chromosomes, compressed = F){
 			col.names = c("chrom", "start", "end", "score"))
 	}
 	tmp = with(tmp, GRanges(chrom, IRanges(start, end),
-		score = score, seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19)))
+		score = score, seqinfo = seqinfo(BSgenome.Mmusculus.UCSC.mm10)))
 	tmp = keepSeqlevels(tmp, chromosomes, pruning.mode = "coarse")
 	tmp = coverage(tmp, weight = tmp$score)
 	rbindlist(lapply(bins, process_single_bin,
@@ -74,7 +74,7 @@ processText = function(x, bins, chromosomes){
 	tmp = tmp[, list(chrom = paste0("chr", Chromosome),
 		start = Start, end = End, score = `Wild-type`)]
 	tmp = keepSeqlevels(with(tmp, GRanges(chrom, IRanges(start, end),
-			score = score, seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19))),
+			score = score, seqinfo = seqinfo(BSgenome.Mmusculus.UCSC.mm10))),
 		chromosomes, pruning.mode = "coarse")
 	tmp = coverage(tmp, weight = tmp$score)
 	rbindlist(lapply(bins, process_single_bin,
@@ -87,7 +87,7 @@ processXlsx = function(x, bins, chromosomes) {
 	tmp = tmp[, list(chrom = paste0("chr", Chromosome),
 		start = Start, end = End, score = `Wild-type`)]
 	tmp = keepSeqlevels(with(tmp, GRanges(chrom, IRanges(start, end),
-		score = score, seqinfo = seqinfo(BSgenome.Hsapiens.UCSC.hg19))),
+		score = score, seqinfo = seqinfo(BSgenome.Mmusculus.UCSC.mm10))),
 		chromosomes, pruning.mode = "coarse")
 	tmp = coverage(tmp, weight = tmp$score)
 	rbindlist(lapply(bins, process_single_bin,
