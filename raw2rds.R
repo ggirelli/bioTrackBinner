@@ -26,7 +26,7 @@ parser = add_argument(parser, arg = '--threads', short = '-t', type = class(0),
 p = parse_args(parser)
 attach(p['' != names(p)])
 
-chromosomes = paste0("chr", c(1:22, "X", "Y"))
+chromosomes = paste0("chr", c(1:19, "X", "Y"))
 
 suppressMessages(require(data.table))
 suppressMessages(require(pbapply))
